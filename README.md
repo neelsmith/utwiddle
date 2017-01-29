@@ -1,2 +1,5 @@
 # workspace-template
-SBT build file setting up scala environment for CITE work
+
+The SBT build file makes scala libraries for work in the CITE architecture available to your environment.  `imports.sc` is a scala  snippet importing current versions of those libraries.  To work with the CITE archicture interactively, run `sbt`, and at the console, `:load imports.sc`
+
+The file `demo.sc` has a few examples of usage of the libraries.  
