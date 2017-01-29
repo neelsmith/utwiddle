@@ -1,2 +1,2 @@
 
-import edu.holycross.shot.cite.xcite._
+import edu.holycross.shot.cite._
