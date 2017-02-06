@@ -16,3 +16,20 @@ println("\ts2.ucode == " + s2.ucode)
 println("\n\nCompare them:")
 println("\ts1.ascii == s2.ascii ? " + (s1.ascii == s2.ascii))
 println("\ts1.ucode == s2.ucode ? " + (s1.ucode == s2.ucode))
+
+
+println("\n\nTest equality:")
+println("\ts1  == s2  ? " + (s1  == s2 ))
+
+println("\n\nSort by Greek alphabet:")
+val s3 = LiteraryGreekString("zw=|on")
+val s4 = LiteraryGreekString("i(/ppos")
+println("\ts3 < s4 ? " + (s3 < s4))
+
+/*
+//Not sure why this is failing.
+println("\n\nTry sorting a vector of them.  Before:")
+val animals = Vector(s3,s4)
+println("After:")
+animals.sorted
+*/
