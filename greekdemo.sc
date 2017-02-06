@@ -21,7 +21,7 @@ println("\ts1.ucode == s2.ucode ? " + (s1.ucode == s2.ucode))
 println("\n\nTest equality:")
 println("\ts1  == s2  ? " + (s1  == s2 ))
 
-println("\n\nSort by Greek alphabet:")
+println("\n\nCompare on Greek alphabetic ordering:")
 val s3 = LiteraryGreekString("zw=|on")
 val s4 = LiteraryGreekString("i(/ppos")
 println("\ts3 < s4 ? " + (s3 < s4))
