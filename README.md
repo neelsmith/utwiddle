@@ -1,4 +1,4 @@
-# `utwiddle`
+# `utwiddle`: ubiquitous URN twiddling
 
 `utwiddle` (pronounced "you twiddle") is a domain-specific language for working with citable scholarly resources.  This repository includes an `sbt` build file making scala libraries implementing `utwiddle` available to your environment.
 
