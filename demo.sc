@@ -25,7 +25,7 @@ def urns = {
 
 def texts = {
   val srcFile = "resources/il1-7.tsv"
-  val corpus = CorpusFileIO.fromFile(srcFile,"\t")
+  val corpus = CorpusSource.fromFile(srcFile,"\t")
   val iliad_1_1 = CtsUrn("urn:cts:greekLit:tlg0012.tlg001:1.1")
   println("Passage;")
   println("\t" + iliad_1_1)
@@ -33,41 +33,7 @@ def texts = {
   println("\tcorpus ~~ iliad_1_1" )
   println("yields")
   val matches = corpus ~~ iliad_1_1
-  println("\t" + matches(0).text)
-}
-
-def alignments = {
-  val orcaRaw = OrcaCollection(clauses)
-  println("Start from " )
-  println("\t" + orcaRaw.alignments.size )
-  println("analyses of grammatical clauses.")
-
-
-  val expanded = orcaRaw.expandUrns(ilreff)
-  println("Expand range URNs to yield  ")
-  println("\t" + expanded.size)
-  println("analyses.")
-  val orca = OrcaCollection(expanded)
-
-  val indicative = Cite2Urn("urn:cite2:hmt:iliadicClauses.v1:indicative")
-  println("\nIndicative = ")
-  println("\t" + indicative)
-  println("Filter analyses:")
-  println("\torca ~~ indicative")
-  val indicativeAnalyses = orca ~~ indicative
-  println("to yield ")
-  println("\t" + indicativeAnalyses.alignments.size)
-  println("analyses.")
-}
-
-
-def all = {
-  println  ("-----------URN demo --------------------")
-  urns
-  println  ("-----------Text demo -------------------")
-  texts
-  println  ("-----------Alignment demo --------------")
-  alignments
+  println("\t" + matches.nodes(0).text)
 }
 
 
@@ -122,3 +88,40 @@ CtsUrn("urn:cts:greekLit:tlg0012.tlg001.fuPers:2.8"),
 CtsUrn("urn:cts:greekLit:tlg0012.tlg001.fuPers:2.9"),
 CtsUrn("urn:cts:greekLit:tlg0012.tlg001.fuPers:2.10")
 )
+
+
+
+
+def alignments = {
+  val orcaRaw = OrcaCollection(clauses)
+  println("Start from " )
+  println("\t" + orcaRaw.alignments.size )
+  println("analyses of grammatical clauses.")
+
+
+  val expanded = orcaRaw.expandUrns(ilreff)
+  println("Expand range URNs to yield  ")
+  println("\t" + expanded.size)
+  println("analyses.")
+  val orca = OrcaCollection(expanded)
+
+  val indicative = Cite2Urn("urn:cite2:hmt:iliadicClauses.v1:indicative")
+  println("\nIndicative = ")
+  println("\t" + indicative)
+  println("Filter analyses:")
+  println("\torca ~~ indicative")
+  val indicativeAnalyses = orca ~~ indicative
+  println("to yield ")
+  println("\t" + indicativeAnalyses.alignments.size)
+  println("analyses.")
+}
+
+
+def all = {
+  println  ("-----------URN demo --------------------")
+  urns
+  println  ("-----------Text demo -------------------")
+  texts
+  println  ("-----------Alignment demo --------------")
+  alignments
+}
