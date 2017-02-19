@@ -7,3 +7,7 @@ To work with the libraries interactively, run `sbt console`, and within the cons
 The file `demo.sc` has a few examples of usage of the libraries.
 
 Documentation (like the utwiddle language itself) is in active development, and is [available here](https://neelsmith.github.io/utwiddle/).
+
+## Status
+
+In early phases of active development.
