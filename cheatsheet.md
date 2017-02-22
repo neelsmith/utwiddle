@@ -19,8 +19,8 @@
 
 | Status | Operator/function       | Meaning                                                |
 | :----- | :---------------------- | :----------------------------------------------------- |
-|        | `CtsUrn collapseTo Int` | reduce passage component to specified level            |
-|        | `CtsUrn collapseBy Int` | reduce passage component by specified number of levels |
+|   √     | `CtsUrn collapseTo Int` | reduce passage component to specified level.  Currently, only applies to single-node URNs.            |
+|   √     | `CtsUrn collapseBy Int` | reduce passage component by specified number of levels. Currently, only applies to single-node URNs. |
 
 
 
@@ -49,7 +49,7 @@
 |   √     | `OrcaCollection.analyses`      | vector of analysis Cite2Urns                        |
 |    √    | `OrcaCollection.texts`         | vector of CtsUrns of analyzed passages              |
 |    √    | `OrcaCollection.corpus String` | creates an analytical Corpus with given exemplar ID |
-|        | `OrcaCollection ~~ Corpus`    |   filters by  text passages in a corpus|
+|     √   | `OrcaCollection ~~ Corpus`    |   filters by  text passages in a corpus|
 
 
 
@@ -58,5 +58,5 @@
 
 | Status | Operator/function | Meaning |
 | ------ | :---------------- | :------ |
-|        | `Corpus ~~ OrcaCollection`    |   filters by  text passages analyzed in OrcaCollection|
-|    √    | `Corpus.texts`    |   vector of String values      |
+|   √     | `Corpus ~~ OrcaCollection`    |   filters by  text passages analyzed in OrcaCollection|
+|    √    | `Corpus.contents`    |   vector of String values      |
