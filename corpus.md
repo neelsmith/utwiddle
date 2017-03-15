@@ -104,3 +104,6 @@ The most common four-gram?
 Plot a histogram of the top 20 items in `fourGram`:
 
      WispDriver.bar(fourGram,20)
+
+
+>**Warning**: this may freeze your console;  I don't know why or under what circumstances.  Use it when you're willing to shut down your console. :-(

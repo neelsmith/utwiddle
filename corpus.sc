@@ -31,14 +31,28 @@ val persiansAndMedesText = herodotus.find(persiansAndMedes)
 assert (persiansAndMedesText.size == 46)
 
 
-/*
--
-- search for a token
-- search for a vector of tokens
-- search for a vector of tokens with a given distance
 
-These are composable functions, so you can chain them to create
-*/
+// search for a token
+val oneHellene = herodotus.findToken("Hellene")
+val hellenes = herodotus.findToken("Hellenes")
+val allHellenes = oneHellene ++ hellenes
+assert(allHellenes.size == 367)
+
+// search for a vector of tokens
+
+val persiansAndMedesTokensText = herodotus.findTokens(persiansAndMedes)
+
+
+//search for a vector of tokens with a given distance
+
+
+val proemStatement = herodotus.findTokensWithin(Vector("Showing","Herodotus", "forth"),10)
+
+assert(proemStatement.size == 1)
+
+val notCloseEnough = herodotus.findTokensWithin(Vector("Showing","Herodotus", "forth"), 5)
+assert (notCloseEnough.isEmpty)
+
 
 
 //find frequency of histograms
